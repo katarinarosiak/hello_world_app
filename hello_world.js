@@ -21,12 +21,19 @@ const COUNTRY_DATA = [
     alt: "Застава Србије",
     title: "Идите на српски сајт",
   },
+  {
+    path: "/polish",
+    flag: "flag-of-Poland.png",
+    alt: "Polish Flag",
+    title: "Idź do strony po polsku"
+  }
 ];
 
 const LANGUAGE_CODES = {
   english: "en-US",
   french: "fr-FR",
   serbian: "sr-Cryl-rs",
+  polish: "pl-PL",
 };
 
 
@@ -69,6 +76,7 @@ app.use((err, req, res, _next) => {
   res.status(404).send(err.message);
 });
 
+// listening to specified port
 app.listen(3000, 'localhost', () => {
   console.log('Listening to port 3000');
 });
