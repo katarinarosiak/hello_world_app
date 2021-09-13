@@ -36,7 +36,6 @@ const LANGUAGE_CODES = {
   polish: "pl-PL",
 };
 
-
 //where to look for pug file, use pug engine
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -47,7 +46,7 @@ app.use(express.static('public')); //where to look for static assets
 //loging status
 app.use(morgan('common'));
 
-//view helper - property of app.local. 
+//view helper - property of app.local.
 app.locals.currentPathClass = (path, currentPath) => {
   return path === currentPath ? "current" : "";
 };
@@ -70,7 +69,7 @@ app.get("/:language", (req, res, next) => {
       language: languageCode,
     });
   }
-})
+});
 app.use((err, req, res, _next) => {
   console.log(err);
   res.status(404).send(err.message);
